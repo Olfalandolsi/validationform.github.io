@@ -1,0 +1,961 @@
+/* genral style======================================================================= */
+*{
+ box-sizing: border-box;
+ text-decoration: none;
+ list-style: none;
+}
+html{
+ font-size: 62.5%;
+}
+body{
+ /*font-family: 'Heebo', sans-serif;*/
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.8em;
+  font-size: 1.8rem;
+  color: #999;
+  font-weight: bold;
+}
+/* == width of container ==*/
+.container{
+  max-width: 85%;
+  margin: auto;
+  padding: 5rem;
+}
+/* == position o sections == */
+#home,#about,#service,#portfolio,#resume,.box-img{
+  position: relative;
+}
+/* == font family h1/h2/nav link/h3/h4 == */
+h1,h2,.nav-link,h4,h3{
+  font-family: 'Baloo 2', cursive;
+}
+/* == color of titles ==*/
+.content,#service .heading>h2, #resume .heading>h2,h4{
+  color: #fff;
+}
+/* ==  text align == */
+.content,.nav-link{
+  text-align: center;
+}
+/* == size of content h2 and link == */
+.content>h2 , .content>a,h4{
+  font-size: 2rem;
+}
+/*== wrapper == */ 
+.wrapper{
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  font-size: 3rem;
+  font-family: 'Baloo 2', cursive;
+  text-align: center;
+  white-space: nowrap;
+}
+/* == dynamic text ==*/
+.dynamic-txt{
+  margin: 0;
+  padding-left: 0;
+  color: #50cdb5;
+  margin-left:1rem;
+ 
+}
+/* == dynamic txt list item == */
+.dynamic-txt li{
+  position: relative;
+  padding: 0;
+}
+.dynamic-txt li::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  border-left: 1px solid #50cdb5;
+  background-color: #0a192f;
+  animation:typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%,
+  60%{
+    left:calc(100% )
+  }
+  100%{
+    left: 0;
+  }
+}
+
+/* == heading style == */
+.heading{
+  border-bottom:1px dotted #8892b0;
+  padding: 2rem 0;
+  align-items: center;
+	justify-content: space-between;
+}
+/* == heading h2 == */
+.heading>h2{
+  font-size: 4rem;
+  width: 60rem;
+  align-self: flex-end;
+  padding-left: 2rem;
+}
+/* color heading h2 about/portfolio section == */ 
+#about .heading>h2, #portfolio .heading>h2{
+  color: #0a192f;
+}
+/* color heading h2 service/resume section == */ 
+#service .heading>h2, #resume .heading>h2{
+  color: white;
+}
+/* == background color of about/portfolio section == */
+#about,#portfolio{
+  background-color: #fafafa;
+}
+/* == background color of service/resume section == */
+#service, #resume{
+  background-color: #0a192f;
+}
+/* == h3 style == */
+h3{
+  font-size: 3.5rem;
+	font-family: 'Berkshire Swash', cursive;
+	color:#50cdb5;
+	padding-bottom: 1rem;
+  white-space: nowrap;
+}
+/* == page title style == */
+.title{
+  letter-spacing: 0.3rem;
+  position: absolute;
+  bottom: 50%;
+  left:-6rem;
+  transform: rotate(90deg); 
+  text-align: center;
+}
+.title::after{
+  content: '';
+  height: 0.2rem;
+  width: 20rem;
+  display: block;
+  background-color: #50cdb5;
+  margin-top: -4rem ;
+}
+/* == color of about/portfolio section title == */
+#about .title, #portfolio .title{
+  color:#0a192f;
+}
+/* == color of home/service/resume section title == */
+#home .title, #service .title, #resume .title{
+  color:#fff;
+}
+/* == title span background color== */
+#about span, #portfolio span{
+  background-color: #fafafa;
+}
+/* == title span background color== */
+#home span, #service h2 span,#resume .title span{
+  background-color: #0a192f;
+  padding: 0 1rem;
+}
+/* == box/heading style == */
+.box, .heading{
+  display: flex;
+}
+/* == box style == */
+.box{
+  justify-content: space-between;
+  padding: 5rem 0;
+}
+/* == link style == */
+.lien{
+  text-decoration: none;
+  font-size: 2rem;
+  transition: 0.5s ease-in-out;
+  padding: 0.5rem 1rem;
+}
+.lien::before,.nav-link::before{
+  content: '';
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+}
+/* == content box service /portfolio == */
+#service .box .content-box,#portfolio .box .content-box{
+	position: relative;
+	width: 33rem;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+/* nav style======================================================================= */
+/* == nav == */
+nav{
+  background-color: #0a192f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 3%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+/* == logo == */
+.logo img{
+  width: 15rem;
+}
+/* == nav list style == */
+nav .nav-list{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  width: 70%;
+}
+/* == nav btn style == */
+.nav-btn{
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  cursor: pointer;
+  display: none;
+}
+/* == check style == */
+#check{
+  display:none;
+}
+/* == nav link== */
+.nav-link{
+  font-size: 2rem;
+  color: white;
+  padding-bottom: 1rem;
+  transition:transform 0.5s ease-in;
+  text-transform: uppercase;
+  position: relative;
+}
+.nav-link::before{
+  height: 0.2rem;
+  background-color: #50cdb5;
+  transform-origin: center;
+}
+/* nav-link style on hover == */
+.nav-link:hover::before{
+  transform: scaleX(1);
+  background-color: #fff;
+}
+.nav-link:hover{
+ color: #50cdb5;
+}
+/* home style======================================================================= */
+/* == home content == */
+.content{
+ position: absolute;
+ top: 20rem;
+ right:2rem;
+ bottom: 30rem;
+ left: 2rem;
+ max-width: 80%;
+ margin: auto;
+}
+/* == titre h1 == */
+h1{
+ font-size: 6rem;
+ white-space: nowrap;
+}
+/* == lien home contact me == */
+.content .lien{
+ border: 1px solid #50cdb5;
+ color: #50cdb5;
+ display: block;
+ margin: 5rem auto;
+ width: 18rem;
+ position: relative;
+ z-index: 1;
+}
+/* == link style on hover == */
+.content .lien::before{
+  height: 100%;
+  transform-origin: left;
+  background-color: #50cdb5;
+  z-index: -1;
+}
+.content .lien:hover::before{
+  transform: scaleX(1);
+}
+.content .lien:hover{
+  color: #0a192f;
+}
+/* == réseax sociaux (social) == */
+.social{
+ top: 20rem;
+ right: 0;
+ list-style: none;
+ padding-left:0; 
+ position: fixed;
+  z-index: 1;
+}
+.social li{
+ padding: 0 2rem;
+}
+ /* == social icons == */
+.fab{
+ color: #50cdb5;
+ font-size: 2rem;
+ margin: 3rem 0;
+ transition: transform 0.5s ease-in-out;
+text-shadow: -5px 5px 15px rgba(0, 255, 255, 0.8);
+}
+/*== icons style on hover == */
+.social li a:hover .fab{
+ color: #8892b0;
+ transform: rotate(360deg);
+}
+/*about style======================================================================= */
+/* == profile img style == */
+.box-img{
+ width:40rem;
+ height: 40rem;
+}
+.box-img img{
+ width: 100%;
+ height: 100%;
+ position: relative;
+ box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+}
+.box-img::before{
+ content: '';
+ width: 100%;
+ height: 100%;
+ display: block;
+ border: 4px solid #0a192f;
+ position: absolute;
+ top: 2rem;
+ left: 2rem;
+ box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+}
+/* == content box width == */
+#about .content-box{
+ width: 45rem;
+}
+/* == text style == */
+#about .content-box p{
+padding-bottom: 1.2rem;
+}
+/* == link style == */
+#about .content-box .lien{
+ color: #0a192f;
+ border: 1px solid #0a192f;
+ padding: 0.5rem 2rem;
+ box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+/* == link style on hover == */
+#about .content-box .lien:hover{
+	color:#fafafa;
+	background-color: #0a192f;
+ text-decoration: none;
+}
+/*about style======================================================================= */
+/* == content box style == */
+#service .box .content-box{
+	text-align: center;
+	padding: 2rem;
+  color: #fff;
+}
+/* style border on hover == */
+#service .container .content-box span{
+	opacity: 0;
+}
+#service .container .content-box:hover span{
+	opacity: 1;
+}
+/* == h3 style == */
+#service .box .content-box h3{
+	padding-top: 2rem;
+}
+/* Portfolio style======================================================================= */
+/* == box style == */
+#portfolio .box{
+	flex-wrap: wrap;
+}
+/* == content box style ==*/
+#portfolio .container .content-box{
+	height: 35rem;
+	margin: 2rem auto;
+}
+/* == img style==*/
+#portfolio .container .content-box img{
+	width: 100%;
+ height: 35rem;
+}
+/* == img style on hover  == */
+.overlay{
+ position: absolute;
+ top: 0;
+ height:100%;
+ width: 0%;
+ background-color: #0a192f;
+ opacity: 0.8;
+ transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+#portfolio .container .content-box:hover .overlay{
+	width: 100%;
+}
+#portfolio .container .content-box .text-content{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+  white-space: nowrap;
+	padding: 2rem;
+	color: #fff;
+  text-align: center;
+}
+/* == h3 style  == */
+#portfolio .container .content-box .text-content h3{
+	color: #fff;
+  font-size: 2.5rem;
+}
+/*resume style======================================================================= */
+/* == content box style  == */
+#resume .content-box{
+	padding-left: 5rem;
+	padding-right: 5rem;
+	width: 35rem;
+}
+/* ==  list style == */
+#resume .content-box ul{
+	list-style: none;
+	padding-left: 0;
+	margin:5rem 0;
+}
+/* == list itel style == */
+#resume .content-box ul li{
+	position: relative;
+	padding: 3rem 0;
+}
+#resume .content-box li:not(:first-child){
+	margin-top:8rem;
+}
+/* == line left style */
+.line-left{
+	position: absolute;
+	top: 0;
+	left: -6%;
+	background-color: #50cdb5;
+	display: block;
+	width: 0.2rem;
+	height: 100%;
+}
+.line-left::before,.line-left::after{
+	content: '';
+	position: absolute;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	display: block;
+	border:1px solid  #50cdb5;
+	left: -0.5rem;
+}
+.line-left::before{
+	top: -1rem;
+}
+.line-left::after{
+	bottom: -1rem;
+}
+/* == year style == */
+.year .to,.year .from{
+	position: absolute;
+	left: -7rem;
+}
+.year .to{	
+  top: -5rem;
+  font-size: 2rem;
+}
+.year .from{
+	bottom: -2rem;
+  font-size: 2rem;
+}
+/* == skills part style */
+.skills{
+	width: 100%;
+	display: flex;
+ justify-content: space-between;
+ margin-top: -15rem;
+ flex-wrap: wrap;
+ padding:5rem;
+}
+/* == h3 style  == */
+.skills h3{
+ width: 100%;
+ text-align: center;
+}
+/* == h4 style == */
+.skills div h4{
+  text-align: center;
+}
+/* == bars style ==*/
+.bar{
+	width:35rem;
+	height: 0.5rem;
+	border: 1px solid #50cdb5;
+	border-radius: 5rem;
+	box-shadow: 0 0 12px #50cdb5;
+  margin: 2rem 0;
+	overflow: hidden;
+}
+.bar div{
+  height: 0.5rem;
+  background-color: #50cdb5;
+}
+.html{
+	width: 80%;
+	animation: html 2s;
+}
+ @keyframes html {
+		0%{width: 0;}
+		100%{width: 80%;}
+	}
+.css{
+	width: 75%;
+	animation: css 2s;
+}
+@keyframes css {
+	0%{width: 0;}
+	100%{width: 75%;}
+}
+.js{
+	width: 30%;
+	animation: js 2s;
+}
+@keyframes js {
+	0%{width: 0;}
+	100%{width: 30%;}
+}
+/*contact style======================================================================= */
+/* == contact ==*/
+#contact{
+  display: flex;
+}
+/* ==content box == */
+#contact .content-box{
+  width:50% ;
+}
+#contact .content-box:not(:nth-child(2)){
+  padding: 1rem;
+  background-color: #fafafa;
+}
+#contact .content-box:not(:nth-child(2)) div{
+  padding:2rem 3rem 0;
+  background-color: #fafafa;
+}
+#contact .content-box:nth-child(3){
+  text-align: center;
+}
+/* == map style == */
+iframe{
+  width: 100%;
+  height: 100%;
+}
+/* == h2 style  == */
+#contact .content-box h2{
+  font-size: 3.2rem;
+  font-weight: bolder;
+  text-align: center;
+  color: #0a192f;
+}
+/* == input/textarea/icons style ==*/
+.name input,.mail input,.message textarea,.label,.fas,.far,.phone>a{
+  display: block;
+  width: 100%;
+}
+/* == label  == */
+.label{
+  color: #0a192f;
+}
+.check label>a{
+  color: #50cdb5;
+}
+.name input,.mail input,.message textarea{
+  border: none;
+}
+.name input,.mail input,.message textarea{
+  background-color: #fafafa;
+  border-bottom: 2px solid #0a192f;
+  padding-top: 2rem;
+}
+.name input,.mail input{
+  padding: 1rem;
+}
+/* submit style */
+.submit a{
+  border: 1px solid #0a192f;
+  width: 50%;
+  margin: auto;
+  display: block;
+  padding: 1rem 3rem ;
+  font-size: 2rem;
+  font-family: 'Baloo 2', cursive;
+  color: #50cdb5;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.submit a::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0a192f;
+  z-index: -1;
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+.submit a:hover::before{
+  transform: scaleX(1);
+}
+#contact .content-box .fas,#contact .content-box .far{
+  color: #50cdb5;
+  font-size: 4rem;
+  padding: 2rem;
+  text-align: center;
+}
+/* icons style */
+.phone,.email,.address{
+  margin: 3rem 0 5rem ;
+  font-size: 2rem;
+}
+.email>a{
+  display: block;
+}
+.phone>a,.email>a,.address>address{
+  color: #0a192f;
+  text-align: center;
+}
+/*==mobile style======================================================================= */
+@media screen and (max-width:767px){
+/* == container == */
+  .container{
+  width:85%;
+  margin: auto;
+  padding: 0;
+}
+/* == portfolio / resume container style == */
+#portfolio .container,#resume .container{
+  padding: 5rem 0;
+  }
+/* == animation area == */
+/*.animation-area {
+height: 45vh;
+}*/
+home .content{padding: 20rem 0;}
+  /* == nav btn ==*/
+  .nav-btn{
+  display: block;
+}
+/* nav list */
+nav .nav-list{
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  width: 0;
+  height: 30rem;
+  overflow: scroll;
+  top: 7rem;
+  left:0%;
+  z-index: -1;
+  transition: 0.3s linear;
+  background-color: #0a192f;
+}
+/* == nav list item style == */
+nav .nav-list .list-item{
+  margin: 3rem;
+}
+#check:checked ~ .nav-list{
+  width: 100%;
+}
+/* ================= home =============*/
+/* == content style == */
+.content{
+  width: 100%;
+  padding: 0 3rem;
+  text-align: center;
+}
+/* == social style == */
+.social{
+ display: none;
+}
+/* icon style == */
+.fab{
+  font-size: 1.5rem;
+}
+/* == heading == */
+.heading{
+ padding-bottom: 0;
+}
+/* == heading svg == */
+.heading svg{
+  width: 20rem;
+}
+/* == wrapper == */
+.wrapper{
+  font-size: 2rem;
+}
+/* == heading h2 == */
+.heading>h2{
+  font-size: 3rem;
+  padding-left: 0rem;
+}
+/* == h1/h3 style == */
+h1,h3{
+  line-height: 1.2em;
+}
+/* == h1 style == */
+h1{
+  white-space: normal;
+  font-size: 4rem;
+}
+/* == h3 style == */
+h3{
+   margin: 2rem 0;
+}
+/* == link style == */
+.content .lien{
+  width: 18rem;
+}
+/* == box style == */
+.box{
+flex-direction: column;
+}
+/* == img style */
+.box-img{
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
+.box-img::before{
+  display: none;
+}
+/* == content box style == */
+#service .box .content-box, #about .content-box,#resume .content-box{
+width: 100%;
+}
+/* == about / resume content box == */
+#about .content-box,#service .content-box{
+  height: 20rem;
+  overflow:scroll;
+}
+/* == about content box == */
+#about .content-box{
+  text-align: center;
+  margin-top: 2rem;
+}
+/* == portfolio content box == */
+#portfolio .container .content-box{
+width: 50%;
+margin: 3rem auto;
+}
+/* == h3 style  == */
+#portfolio .container .content-box .text-content h3{
+	color: #fff;
+  font-size: 1.8rem;
+}
+/* == portfolio content box text content style == */
+#portfolio .container .content-box .text-content{
+  white-space: normal;
+}
+/* == resume content box == */
+#resume .content-box{
+  padding: 2rem;
+}
+/* == service content box == */
+#service .box .content-box{
+  margin-bottom: 5rem;
+}
+/* == resume list item == */
+#resume .content-box ul li{
+  width: 50%;
+  margin: 1rem auto;
+}
+/* == resume h3 == */
+#resume .content-box h3{
+  text-align: center;
+}
+.content-box svg{
+  margin-top: 2rem;
+}
+/* == title display none == */
+.title{
+  display: none;
+}
+/* == service content box border none on hover == */
+#service .container .content-box:hover span{
+  opacity: 0;
+}
+/* resume year style */
+.year .to,.year .from{
+  left: -6rem;
+}
+/* == resume skills part style == */
+.skills{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -10rem;
+  flex-wrap: wrap;
+  padding:5rem;
+  flex-direction: column;
+}
+/* == bar style == */
+.bar{
+  width: 100%;
+}
+/* == contact style == */
+#contact{
+  flex-direction: column;
+}
+/* == contact content box == */
+#contact .content-box{
+  width:100% ;
+  margin-bottom: 1rem;
+}
+}
+
+/*============================== tablette style ================================*/
+ @media screen and (min-width:768px) and (max-width:1186px){
+/* == container margin == */
+  .container{
+  padding: 5rem 0;
+}
+/* == animation area == */
+/*.animation-area {
+  height: 50vh;
+  }*/
+/* == nav btn == */
+  .nav-btn{
+  display: block;
+  }
+/* == nav list style == */
+ nav .nav-list{
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  width: 0;
+  height: 30rem;
+  overflow: scroll;
+  top: 7rem;
+  left:0%;
+  z-index: -1;
+  transition: 0.3s linear;
+  background-color: #0a192f;
+}
+/*  == list item style == */
+  nav .nav-list .list-item{
+  margin: 3rem;
+}
+#check:checked ~ .nav-list{
+  width: 100%;
+}
+/* == content style == */
+.content{
+  text-align: center;
+  padding: 5rem ;
+}
+/* == h1/h3 style == */
+h1,h3{
+  line-height: 1.2em;
+}
+/* == h1 style == */
+h1{
+  white-space: normal;
+  font-size: 4rem;
+}
+/* == h3 style == */
+h3{
+  margin: 3rem 0;
+}
+/* == scroll down style == */
+.scroll-down{
+  bottom: 8rem;
+}
+/* == heading h2 == */
+.heading>h2{
+  padding-left: 0rem;
+}
+/* == about/service box style == */
+#about .box, #service .box{
+  flex-direction: column;
+}
+/* == portfolio content box ==*/
+#portfolio .container .content-box{
+  width: 45%;
+}
+/* == service/about/resume content box style == */
+#service .box .content-box,  #about .content-box,#resume .content-box{
+  width:60%;
+  margin:1rem auto;
+}
+/* == about content box == */
+#about .content-box{
+text-align: center;
+margin:8rem auto 1rem;
+}
+/*  == resume list item style == */
+#resume .content-box ul li{
+width: 60%;
+margin: 1rem auto;
+}
+/* == resume content box == */
+#resume .content-box{
+  padding: 2rem;
+}
+/* == resume h3 == */
+#resume .content-box h3{
+text-align: center;
+}
+/* == profile img style == */
+.box-img{
+width: 50%;
+margin: auto;
+}
+/* == about content box == */
+#about .content-box{
+text-align: center;
+padding: 2rem;
+height: 20rem;
+overflow:scroll;
+}
+/* content box svg style == */
+.content-box svg{
+  margin-top: 2rem;
+}
+/* == title display none ==*/
+.title{
+display: none;
+}
+/* == year style == */
+.year .to,.year .from{
+  left: -9.5rem;
+}
+/* == skills part style == */
+.skills{
+  flex-direction: column;
+}
+/* == bar style == */
+.bar{
+width: 60%;
+margin: auto;
+}
+/* == contact style == */
+#contact{
+flex-direction: column;
+}
+/* == contact content box == */
+#contact .content-box{
+  width:100% ;
+  margin-bottom: 1rem;
+}
+}
